@@ -1,0 +1,20 @@
+<h1>Students</h1>
+
+<%= link_to "Nuevo Estudiante", new_student_path %>
+
+<table>
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Cursos</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @students.each do |student| %>
+      <tr>
+        <td><%= student.name %></td>
+        <td><%= student.courses.pluck(:name).join(", ") %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
